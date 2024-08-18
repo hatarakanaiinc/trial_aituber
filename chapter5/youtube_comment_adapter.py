@@ -19,7 +19,7 @@ class YoutubeCommentAdapter:
     if(self.chat.is_alive()==False):
       print("開始してません")
       return None
-    comments = json.load(self.chat.get().json())
+    comments = json.loads(self.chat.get().json())
     if(comments==[]):
       print("コメントが取得できませんでした。")
       return None

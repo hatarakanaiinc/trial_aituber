@@ -31,7 +31,7 @@ class VoiceBoxAdapter:
     print(res.status_code)
     return res.content
 
-  def _get_voice(self, text: str):
+  def get_voice(self, text: str):
     speaker_id = 20
     query_data:json = self._creaate_audio_query(text, speaker_id = speaker_id)
     audio_bytes = self._creaate_request_audio(query_data, speaker_id = speaker_id)
@@ -41,6 +41,6 @@ class VoiceBoxAdapter:
 
 
 if __name__ == "__main__":
-  voicebox = VoiceboxAdapter()
-  data, sample_rate = voicebox._get_voice("こんにちわ")
+  voicebox = VoiceBoxAdapter()
+  data, sample_rate = voicebox.get_voice("こんにちわ")
   print(sample_rate)

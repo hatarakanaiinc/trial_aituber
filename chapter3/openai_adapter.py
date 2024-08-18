@@ -6,7 +6,7 @@ import os
 dotenv.load_dotenv()
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
-class OpenAIAdapter:
+class OpenaiAdapter:
     def __init__(self):
       # system_promptは、system_prompt.txtから読み込む
       with open("chapter3\system_prompt.txt", "r", encoding="utf-8") as f:
